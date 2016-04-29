@@ -1,6 +1,5 @@
 package es.upm.dit.isst.t4.dao;
 
-
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -11,26 +10,26 @@ import es.upm.dit.isst.t4.model.TFG;
 public class TFGDAOImpl implements TFGDAO {
 
 	private static TFGDAOImpl instance;
-	private TFGDAOImpl () {
+
+	private TFGDAOImpl() {
 	}
-	
+
 	public static TFGDAOImpl getInstance() {
-		if ( instance == null )
+		if (instance == null)
 			instance = new TFGDAOImpl();
-		return instance ;
+		return instance;
 	}
-	
+
 	@Override
-	public TFG create(String autor, String titulo, String resumen,
-			String tutor) {
-		
+	public TFG create(String autor, String titulo, String resumen, String tutor) {
+
 		TFG tfg = null;
 		EntityManager em = EMFService.get().createEntityManager();
-		tfg = new TFG (autor, titulo, resumen, tutor);
+		tfg = new TFG(autor, titulo, resumen, tutor);
 		em.persist(tfg);
 		em.close();
 		return tfg;
-		
+
 	}
 
 	@Override
@@ -41,7 +40,7 @@ public class TFGDAOImpl implements TFGDAO {
 		List<TFG> res = q.getResultList();
 		em.close();
 		return res;
-		
+
 	}
 
 	@Override
@@ -51,12 +50,12 @@ public class TFGDAOImpl implements TFGDAO {
 		TFG res = em.merge(tfg);
 		em.close();
 		return res;
-		
+
 	}
 
 	@Override
 	public void delete(String id) {
-		
+
 		EntityManager em = EMFService.get().createEntityManager();
 		try {
 			TFG todo = em.find(TFG.class, id);

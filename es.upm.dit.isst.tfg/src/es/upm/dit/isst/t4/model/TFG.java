@@ -9,14 +9,14 @@ import javax.persistence.Id;
 public class TFG implements Serializable {
 
 	private static final long serialVersionUID = 01L;
-	
+
 	@Id
 	private String autor;
 	private String titulo;
 	private String resumen;
 	private String tutor;
-	
-	public TFG (String autor, String titulo, String resumen, String tutor) {
+
+	public TFG(String autor, String titulo, String resumen, String tutor) {
 		this.setAutor(autor);
 		this.setTitulo(titulo);
 		this.setResumen(resumen);
@@ -54,5 +54,5 @@ public class TFG implements Serializable {
 	public void setAutor(String autor) {
 		this.autor = autor;
 	}
-	
+
 }

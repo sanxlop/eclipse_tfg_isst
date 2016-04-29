@@ -31,6 +31,33 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<url-pattern>/nuevoTFG</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>UploadTFGServlet</servlet-name>
+		<servlet-class>es.upm.dit.isst.tfg.UploadTFGServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UploadTFGServlet</servlet-name>
+		<url-pattern>/upload</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>SuccessUploadFileServlet</servlet-name>
+		<servlet-class>es.upm.dit.isst.tfg.SuccessUploadFileServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SuccessUploadFileServlet</servlet-name>
+		<url-pattern>/successupload</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ServeFileServlet</servlet-name>
+		<servlet-class>es.upm.dit.isst.tfg.ServeFileServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServeFileServlet</servlet-name>
+		<url-pattern>/serve</url-pattern>
+	</servlet-mapping>
+	
 	<welcome-file-list>
 		<welcome-file>principal.html</welcome-file>
 	</welcome-file-list>
